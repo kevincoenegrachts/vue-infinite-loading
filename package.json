@@ -1,6 +1,6 @@
 {
-  "name": "vue-infinite-loading",
-  "version": "2.4.5",
+  "name": "@cevo/vue-infinite-loading",
+  "version": "0.0.1",
   "description": "An infinite scroll plugin for Vue.js",
   "main": "dist/vue-infinite-loading.js",
   "typings": "types/index.d.ts",
@@ -10,9 +10,11 @@
     "src"
   ],
   "author": {
-    "name": "PeachScript",
-    "email": "scdzwyxst@gmail.com"
+    "name": "CEVO",
+    "email": "dev@cevo.com"
   },
+  "repository": "@cevo/vue-infinite-loading",
+  "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config scripts/webpack.config.js --hot --info=false --port 8000",
     "build": "NODE_ENV=production webpack --config scripts/webpack.config.js -p --progress --hide-modules",
@@ -23,23 +25,8 @@
     "test": "BABEL_ENV=test karma start scripts/karma.conf.js",
     "precommit": "npm run lint",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "release": "bash ./scripts/release.sh"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
-  "keywords": [
-    "vue",
-    "vue components",
-    "infinite loading",
-    "infinite scroll",
-    "vue infinite"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PeachScript/vue-infinite-loading.git"
-  },
-  "bugs": {
-    "url": "https://github.com/PeachScript/vue-infinite-loading/issues"
-  },
-  "homepage": "https://github.com/PeachScript/vue-infinite-loading",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
@@ -88,40 +75,7 @@
   "peerDependencies": {
     "vue": "^2.6.10"
   },
-  "license": "MIT",
-  "browserslist": [
-    "> 1%",
-    "last 1 versions",
-    "last 4 Android versions",
-    "last 3 iOS versions"
-  ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "scope-enum": [
-        2,
-        "always",
-        [
-          "core",
-          "config",
-          "spinner",
-          "deps"
-        ]
-      ]
-    }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "airbnb-base",
-      "plugin:vue/essential"
-    ]
-  },
-  "eslintIgnore": [
-    "dist",
-    "test/unit/coverage",
-    "scripts"
-  ]
+  "dependencies": {
+    "standard-version": "^9.1.1"
+  }
 }
